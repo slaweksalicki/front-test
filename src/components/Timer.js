@@ -6,13 +6,13 @@ const Timer = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSeconds(seconds + 1);
+      setSeconds((seconds) => seconds + 1);
     }, 1000);
 
     return () => {
       clearInterval(interval);
     };
-  });
+  }, []);
 
   const date = useRef(new Date().toTimeString());
 
